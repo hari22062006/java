@@ -1,0 +1,57 @@
+Abstraction:
+                 Abstraction is the process of hiding implementation details and showing only the essential features of the object
+Key features of abstraction: 
+•	Abstract methos does not contain body
+•	Implemented using abstract classes and interfaces in java
+•	Helps focus on “what an object” does rather than “how it does it”
+•	If you know the implementation partially , use an abstract class
+•	If you dont know the implementation at all use an interface
+Interface:
+•	Only public ,static,final (constants)  variables are allowed.
+•	All interfaces method are public and abstract by default
+
+When we use interface?
+•	When multiple class need a common behaivour.
+•	When you want to achieve full abstrasction.
+•	When you want to decouple dependencies between components.
+Syntax:
+          Interface interfacename{
+              Static int a=10;
+             Final int b=10;
+             Default void method name()
+}
+Abstract  void methodname() {
+      }
+}
+Eg 1 :
+  package Interface;
+
+interface Superclass1{
+	default void sending() {
+		System.out.println("Superclass 1");
+	}
+}
+interface Superclass2{
+	default void sended() {
+		System.out.println("Superclass 2");
+		
+	}
+}
+class subclass implements Superclass1,Superclass2{
+	public void sending() {
+		System.out.println("superclass 1");
+	}
+	public void sended() {0
+		System.out.println("superclass 2");
+	}
+}
+public class Interface {
+
+	public static void main(String[] args) {
+	subclass s = new subclass();
+	s.sended();
+	s.sending();
+	}
+
+}
+

@@ -1,0 +1,6 @@
+keywords :
+-try: block of code where exception might occur
+-catch: block to handle exceptions
+-throw: explicitly throws an exception 
+-throws: declares exceptions that a method might throw 
+_finally:block that exceptionn regardless of whether an exception occured or not 

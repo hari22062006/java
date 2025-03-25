@@ -1,0 +1,91 @@
+Polymorphism:
+•	Polymorphism in JAVA refers to ability of a single actionto behave differently based on the context
+Types of polymorphism: 
+•	Compile time polymorphism
+•	Runtime polymorphism
+Compile time polymorphism:
+•	Achieved through method overloading
+•	Resolved during compilation
+Runtime polymorphism:
+•	Achieved through method overriding
+Eg 1:
+                           class Shoppingitems{
+	void additems(String item_name,int price){
+		System.out.println("itemname is:"+item_name+"price is:"+price);
+	}
+	void additems (String item_name,int price,int item_quantity){
+		int totalprice=price*item_quantity;
+		System.out.println("item name is:"+item_name+"quantity:"+item_quantity+"totalprice"+totalprice);
+	}
+		
+	void additems(String item_name,int price,int item_quantity,int discount){
+		
+	}
+}
+public class Sample {
+	public static void main(String[] args) {
+		Shoppingitems ref=new Shoppingitems();
+		ref.additems("laptop", 50000);
+		ref.additems("keyboard",1000,3);
+	}
+}
+
+Eg 2:
+import Payment.Creditupi;
+import Payment.Gpay;
+import Payment.Topayvia;
+
+class Topayvia{
+	  void pay(int amount) {
+		  System.out.println("in hand account:"+amount);
+	  }
+}
+class Creditupi extends Topayvia{
+	void pay(int amount ) {
+		System.out.println("upipayment:"+amount);
+		}
+}
+class Gpay extends Topayvia{
+	 void pay(int amount) {
+		 System.out.println("Gpay:"+amount);
+	 }
+}
+class Paytm extends Topayvia{
+	void pay(int amount) {
+		System.out.println("Paytm:"+amount);
+	}
+}
+public class Payment{
+	 public static void main(String[]args) {
+		 Topayvia ref;
+		 ref= new Creditupi();
+		 ref.pay(2000);
+		 ref=new Gpay();
+		 ref.pay(3000);
+		 ref=new Paytm();
+		 ref.pay(3000);
+		 
+	 }
+}
+
+Eg 3:
+       package Vehicle;
+
+abstract class Vehicle{
+ abstract void Startsusing();
+
+}
+class Bike extends Vehicle{
+	void Startsusing() {
+System.out.println("Bike Starts With Kick!.");
+
+	}
+}
+
+public class Vehicle {
+ public static void main(String[] args) {
+Bike ref=new Bike();
+ref.Startsusing();
+  }
+}
+

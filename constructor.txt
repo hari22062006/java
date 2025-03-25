@@ -1,0 +1,15 @@
+class Main {
+   public static void main(String[] args){
+       Sample ref=new Sample();
+       
+       
+   }
+}
+class Sample{
+    //default constructor
+    Sample(){
+        System.out.println("Default constructor");
+        
+    }
+}
+    
